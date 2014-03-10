@@ -38,7 +38,7 @@
 	<!-- <logger name="com.baidu.one.history.facade.impl.OptHistoryFacadeImpl" 
 		level="INFO" additivity="false"> <appender-ref ref="optHistory" /> </logger> -->
 
-	<logger name="net.neoremind.navi" level="DEBUG" additivity="true">
+	<logger name="com.baidu.beidou.navi" level="DEBUG" additivity="true">
 	</logger>
 
 	<root level="ERROR">

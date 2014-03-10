@@ -1,9 +1,0 @@
-00:01:20 [main] DEBUG n.n.n.s.handler.NaviRpcHandlerBase - Deserialize request successfully
-00:01:20 [main] DEBUG n.n.n.s.handler.NaviRpcHandlerBase - Req id=123456789, Req method=add, Req param=[net.neoremind.navi.server.Company@cd5f8b]
-00:01:20 [main] DEBUG n.n.n.s.handler.NaviRpcHandlerBase - Invocatoin successfully for req id=123456789 , service=CompanyServiceImpl, method=add
-00:01:20 [main] DEBUG n.n.n.s.handler.NaviRpcHandlerBase - Deserialize request successfully
-00:01:20 [main] DEBUG n.n.n.s.handler.NaviRpcHandlerBase - Req id=123456789, Req method=getAll, Req param=[]
-00:01:20 [main] DEBUG n.n.n.s.handler.NaviRpcHandlerBase - Invocatoin successfully for req id=123456789 , service=CompanyServiceImpl, method=getAll
-00:01:20 [main] DEBUG n.n.n.s.handler.NaviRpcHandlerBase - Deserialize request successfully
-00:01:20 [main] DEBUG n.n.n.s.handler.NaviRpcHandlerBase - Req id=123456789, Req method=getById, Req param=[1000]
-00:01:20 [main] DEBUG n.n.n.s.handler.NaviRpcHandlerBase - Invocatoin successfully for req id=123456789 , service=CompanyServiceImpl, method=getById
