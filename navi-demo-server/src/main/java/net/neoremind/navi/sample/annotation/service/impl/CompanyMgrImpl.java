@@ -33,7 +33,7 @@ public class CompanyMgrImpl implements CompanyMgr {
 	public void init() {
 		try {
 			Department department101 = new Department(101, "R&D");
-			Department department102 = new Department(102, "联盟前端技术部");
+			Department department102 = new Department(102, "联盟前端技术部.");
 			Department department103 = new Department(103, "市场部");
 			Department department104 = new Department(104, "Sales");
 			List<Department> departmentList1 = new ArrayList<Department>();
