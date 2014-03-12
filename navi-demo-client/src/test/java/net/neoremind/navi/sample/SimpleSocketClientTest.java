@@ -26,8 +26,8 @@ public class SimpleSocketClientTest {
 	private static int SERVER_PORT = 8260;
 
 	@SuppressWarnings("unused")
-	private static final String PROTCOL_PROTOSTUFF = "application/baidu.protostuff";
-	private static final String PROTCOL_PROTOBUF = "application/baidu.protobuf";
+	private static final String PROTCOL_PROTOSTUFF = "application/navi.protostuff";
+	private static final String PROTCOL_PROTOBUF = "application/navi.protobuf";
 
 	public static void main(String[] args) throws Exception {
 		try {

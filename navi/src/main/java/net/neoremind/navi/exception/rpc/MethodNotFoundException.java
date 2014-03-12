@@ -1,8 +1,3 @@
-/*
- * @(#)MethodNotFoundException.java  2009-02-27
- *
- * Copyright 2009 baidu.com, All rights reserved.
- */
 package net.neoremind.navi.exception.rpc;
 
 

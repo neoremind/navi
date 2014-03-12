@@ -7,8 +7,8 @@ package net.neoremind.navi.server.protocol;
  */
 public enum NaviProtocol {
 
-	PROTOSTUFF("application/baidu.protostuff"), 
-	PROTOBUF("application/baidu.protobuf");
+	PROTOSTUFF("application/navi.protostuff"), 
+	PROTOBUF("application/navi.protobuf");
 
 	private String name;
 
