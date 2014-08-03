@@ -81,22 +81,23 @@ public class NaviRpcServlet extends BaseRpcServlet {
 			 * Init Xml configured services
 			 */
 			if (beanNamesForType == null || beanNamesForType.length == 0) {
-				log.warn("No navi rpc service with xml configured.");
-			}
-			for (String beanName : beanNamesForType) {
-				NaviRpcExporter exporter = (NaviRpcExporter) factory.getBean(beanName);
-				String context = "";
-				try {
-					Class<?> interf = exporter.getServiceInterface();
-					context = interf.getSimpleName();
-					if (interf.isAssignableFrom(exporter.getServiceBean().getClass())) {
-						exporters.put(context, exporter);
-						log.info("Find Rpc service configured by Xml style, interface is " + context + " , implementation is " + exporter.getServiceBean().getClass().getName());
-					} else {
-						log.error("The interface " + interf.getName() + " is not compatible with the bean " + beanName);
+				log.warn("No navi rpc service found with XML configured.");
+			} else {
+				for (String beanName : beanNamesForType) {
+					NaviRpcExporter exporter = (NaviRpcExporter) factory.getBean(beanName);
+					String context = "";
+					try {
+						Class<?> interf = exporter.getServiceInterface();
+						context = interf.getSimpleName();
+						if (interf.isAssignableFrom(exporter.getServiceBean().getClass())) {
+							exporters.put(context, exporter);
+							log.info("Find Rpc service configured by Xml style, interface is " + context + " , implementation is " + exporter.getServiceBean().getClass().getName());
+						} else {
+							log.error("The interface " + interf.getName() + " is not compatible with the bean " + beanName);
+						}
+					} catch (ClassNotFoundException e) {
+						log.error("The interface " + exporter.getServiceInterfaceName() + " not found.");
 					}
-				} catch (ClassNotFoundException e) {
-					log.error("The interface " + exporter.getServiceInterfaceName() + " not found.");
 				}
 			}
 
@@ -104,30 +105,31 @@ public class NaviRpcServlet extends BaseRpcServlet {
 			 * Init Annotation configured services
 			 */
 			if (beanNamesWithAnnotation == null || beanNamesWithAnnotation.size() == 0) {
-				log.warn("No navi rpc service with annotation configured.");
-			}
-			for (Entry<String, Object> beanWithAnnotationMap : beanNamesWithAnnotation.entrySet()) {
-				Object serviceBean = beanWithAnnotationMap.getValue();
-				Class<?> interf = serviceBean.getClass().getAnnotation(NaviRpcService.class).serviceInterface();
-				if (interf == null) {
-					log.error("Rpc service interface not configured for " + serviceBean.getClass().getName());
-					continue;
-				}
-				String context = "";
-				try {
-					NaviRpcExporter exporter = new NaviRpcExporter(interf.getName(), serviceBean);
-					context = interf.getSimpleName();
-					if (interf.isAssignableFrom(serviceBean.getClass())) {
-						if (exporters.containsKey(context)) {
-							log.warn("Duplicate service=[" + context + "] configured, Annotation way will override Xml way.");
-						}
-						exporters.put(context, exporter);
-						log.info("Find Rpc service configured by Annotation style, interface is " + context + " , implementation is " + serviceBean.getClass().getName());
-					} else {
-						log.error("The interface " + interf.getName() + " is not compatible with the bean " + serviceBean);
+				log.warn("No navi rpc service found with annotation configured.");
+			} else {
+				for (Entry<String, Object> beanWithAnnotationMap : beanNamesWithAnnotation.entrySet()) {
+					Object serviceBean = beanWithAnnotationMap.getValue();
+					Class<?> interf = serviceBean.getClass().getAnnotation(NaviRpcService.class).serviceInterface();
+					if (interf == null) {
+						log.error("Rpc service interface not configured for " + serviceBean.getClass().getName());
+						continue;
 					}
-				} catch (Exception e) {
-					log.error("The interface " + context + " configured error");
+					String context = "";
+					try {
+						NaviRpcExporter exporter = new NaviRpcExporter(interf.getName(), serviceBean);
+						context = interf.getSimpleName();
+						if (interf.isAssignableFrom(serviceBean.getClass())) {
+							if (exporters.containsKey(context)) {
+								log.warn("Duplicate service=[" + context + "] configured, Annotation way will override Xml way.");
+							}
+							exporters.put(context, exporter);
+							log.info("Find Rpc service configured by Annotation style, interface is " + context + " , implementation is " + serviceBean.getClass().getName());
+						} else {
+							log.error("The interface " + interf.getName() + " is not compatible with the bean " + serviceBean);
+						}
+					} catch (Exception e) {
+						log.error("The interface " + context + " configured error");
+					}
 				}
 			}
 

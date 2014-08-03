@@ -129,6 +129,9 @@ public class BaseRpcServlet extends HttpServlet {
 	 * @return content type
 	 */
 	protected String getHttpContentType(HttpServletRequest httpServletRequest) {
+		if (StringUtils.isEmpty(httpServletRequest.getContentType())) {
+			throw new InvalidRequestException("Rpc protocol invalid");
+		}
 		String contentType = httpServletRequest.getContentType().split(";")[0];
 		if (contentType == null) {
 			contentType = NaviCommonConstant.DEFAULT_PROTOCAL_CONTENT_TYPE;

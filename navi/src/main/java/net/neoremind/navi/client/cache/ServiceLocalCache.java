@@ -28,6 +28,11 @@ public class ServiceLocalCache {
 
 	public static void lock() throws InterruptedException {
 		semaphore.acquire();
+		if (cacheReference == cache1) {
+			cache2.clear();
+		} else {
+			cache1.clear();
+		}
 	}
 	
 	public static void switchCache() throws InterruptedException {
@@ -35,10 +40,8 @@ public class ServiceLocalCache {
 		//swith between two cache
 		if (cacheReference == cache1) {
 			cacheReference = cache2;
-			cache1.clear();
 		} else {
 			cacheReference = cache1;
-			cache2.clear();
 		}
 	}
 	
