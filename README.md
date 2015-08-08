@@ -9,7 +9,8 @@ Navi可以理解为Navigation的简称，即“制导/导航”。
 
 Navi是一个分布式服务框架，提供高性能和无侵入式的RPC远程服务调用方案，以及SOA服务治理方案，秉承简单够用、灵活扩展的开发原则。
 
-利用Java和[Spring Framework](spring.io)实现，集成[Zookeeper](http://zookeeper.apache.org/)，使用HTTP原生通信传输，利用[Protostuff](https://github.com/protostuff/protostuff)作为序列化协议，同时提供了无侵入式的灵活配置方式，XML或者注解方式使开发一个服务变得非常容易。
+利用Java和[Spring Framework](http://spring.io/)实现，集成[Zookeeper](http://zookeeper.apache.org/)，使用HTTP原生通信传输，利用[Protostuff]
+(https://github.com/protostuff/protostuff)作为序列化协议，同时提供了无侵入式的灵活配置方式，XML或者注解方式使开发一个服务变得非常容易。
 
 ##Features 
 * Providing high availability. By using Zookeeper for underlying group management, Navi can make it easy to publish/remove service nodes.
