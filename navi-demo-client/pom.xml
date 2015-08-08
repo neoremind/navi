@@ -186,14 +186,14 @@
 					<!-- specify run port, default is 8080 -->
 					<connectors>
 						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-							<port>8081</port>
+							<port>8082</port>
 							<maxIdleTime>60000</maxIdleTime>
 						</connector>
 					</connectors>
 
 					<!-- specify stop key and port -->
 					<stopKey>jetty-stopy-key</stopKey>
-					<stopPort>8009</stopPort>
+					<stopPort>8010</stopPort>
 
 					<!-- deploy multiple projects -->
 					<contextHandlers>
