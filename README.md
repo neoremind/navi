@@ -42,45 +42,15 @@ Navi是一个分布式服务框架，提供高性能和无侵入式的RPC远程�
 [性能测试](https://github.com/neoremind/navi/wiki/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95)
 
 
-## Dependencies
-Navi-RPC默认使用如下依赖。
-
-```
-[INFO] +- org.springframework:spring-beans:jar:3.1.2.RELEASE:compile
-[INFO] +- org.springframework:spring-context:jar:3.1.2.RELEASE:compile
-[INFO] |  +- org.springframework:spring-aop:jar:3.1.2.RELEASE:compile
-[INFO] |  +- org.springframework:spring-expression:jar:3.1.2.RELEASE:compile
-[INFO] |  \- org.springframework:spring-asm:jar:3.1.2.RELEASE:compile
-[INFO] +- org.springframework:spring-core:jar:3.1.2.RELEASE:compile
-[INFO] |  \- commons-logging:commons-logging:jar:1.1.1:compile
-[INFO] +- org.springframework:spring-web:jar:3.1.2.RELEASE:compile
-[INFO] |  \- aopalliance:aopalliance:jar:1.0:compile
-[INFO] +- org.codehaus.jackson:jackson-mapper-asl:jar:1.9.9:compile
-[INFO] +- org.codehaus.jackson:jackson-core-asl:jar:1.9.9:compile
-[INFO] +- com.dyuproject.protostuff:protostuff-runtime:jar:1.0.7:compile
-[INFO] +- com.dyuproject.protostuff:protostuff-api:jar:1.0.7:compile
-[INFO] +- com.dyuproject.protostuff:protostuff-collectionschema:jar:1.0.7:compile
-[INFO] +- com.dyuproject.protostuff:protostuff-core:jar:1.0.7:compile
-[INFO] +- org.apache.zookeeper:zookeeper:jar:3.4.0:compile
-[INFO] |  +- org.slf4j:slf4j-api:jar:1.6.1:compile
-[INFO] |  +- org.slf4j:slf4j-log4j12:jar:1.6.1:compile
-[INFO] |  +- log4j:log4j:jar:1.2.15:compile
-[INFO] |  |  \- javax.mail:mail:jar:1.4:compile
-[INFO] |  |     \- javax.activation:activation:jar:1.1:compile
-[INFO] |  +- jline:jline:jar:0.9.94:compile
-[INFO] |  \- org.jboss.netty:netty:jar:3.2.2.Final:compile
-[INFO] +- javax.servlet:servlet-api:jar:2.5:provided
-```
-
 ===
 
-### Navi-Pbrpc
+## Navi-Pbrpc
 
 系出同门的Pbrpc，提供基于socket nio + protobuf全双工、异步、非阻塞的高性能通信解决方案，了解详情请[点击链接](https://github.com/neoremind/navi-pbrpc)。
 
 ===
 
-### Supports 
+## Supports 
 
-![](images/gmail.png)
+![](http://neoremind.net/imgs/gmail.png)
 
