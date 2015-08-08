@@ -7,12 +7,15 @@ import static org.junit.Assert.fail;
 import java.util.List;
 import java.util.Map;
 
+import org.junit.Ignore;
+
 import com.baidu.beidou.navi.it.exception.IdDuplicateException;
 import com.baidu.beidou.navi.it.service.CompanyService;
 import com.baidu.beidou.navi.util.CollectionUtil;
 import com.baidu.beidou.navi.vo.Company;
 import com.baidu.beidou.navi.vo.CompanyBuilder;
 
+@Ignore
 public class AbstractCompanyServiceZooTest extends BaseZooTest {
 
     public void testGet(CompanyService companyService) {

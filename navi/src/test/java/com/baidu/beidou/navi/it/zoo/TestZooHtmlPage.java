@@ -3,10 +3,12 @@ package com.baidu.beidou.navi.it.zoo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.baidu.beidou.navi.it.Config;
 
+@Ignore
 public class TestZooHtmlPage extends BaseZooTest {
 
     @Test

@@ -1,4 +1,4 @@
 language: java
 
 install:
-    cd navi && mvn -Dmaven.test.skip=true
+    cd navi && mvn test

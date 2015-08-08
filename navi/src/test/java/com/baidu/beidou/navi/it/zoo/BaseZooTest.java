@@ -6,6 +6,7 @@ import java.net.URL;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
@@ -19,6 +20,7 @@ import com.baidu.beidou.navi.it.StandaloneServer;
 import com.baidu.beidou.navi.util.ByteUtil;
 import com.baidu.beidou.navi.util.StringUtil;
 
+@Ignore
 @ContextConfiguration(locations = { "classpath:applicationContext.xml" })
 public class BaseZooTest extends AbstractJUnit4SpringContextTests {
 

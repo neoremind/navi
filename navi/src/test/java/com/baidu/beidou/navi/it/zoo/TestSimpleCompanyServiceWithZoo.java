@@ -3,10 +3,12 @@ package com.baidu.beidou.navi.it.zoo;
 import javax.annotation.Resource;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.baidu.beidou.navi.it.service.CompanyService;
 
+@Ignore
 public class TestSimpleCompanyServiceWithZoo extends AbstractCompanyServiceZooTest {
 
     @Resource
