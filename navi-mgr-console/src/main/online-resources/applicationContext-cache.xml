@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop   
+        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+        http://www.springframework.org/schema/beans   
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd   
+        http://www.springframework.org/schema/mvc   
+        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd   
+        http://www.springframework.org/schema/tx   
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<!--  <context:property-placeholder location="classpath*:redis-config.properties" /> -->
+
+	<!-- Redis Cache Manager. -->
+	<bean id="redisCacheMgr" class="com.baidu.unbiz.redis.RedisCacheManager"
+		init-method="init">
+		<property name="clientList">
+			<list>
+				<ref bean="redisClient1" />
+				<ref bean="redisClient2" />
+			</list>
+		</property>
+		<property name="retryTimes" value="${redis.group1.retry.times}" />
+		<property name="evictorDelayCheckSeconds" value="${redis.group1.evictor.delayCheckSeconds}" />
+		<property name="evictorCheckPeriodSeconds" value="${redis.group1.evictor.checkPeriodSeconds}" />
+		<property name="evictorFailedTimesToBeTickOut"
+			value="${redis.group1.evictor.failedTimesToBeTickOut}" />
+	</bean>
+
+	<bean id="redisClient1" class="com.baidu.unbiz.redis.RedisClient">
+		<constructor-arg name="clientConfig">
+			<bean class="com.baidu.unbiz.redis.config.RedisHAClientConfig">
+				<property name="cacheName" value="${redis.group1.client1.name}" />
+				<property name="redisServerHost" value="${redis.group1.client1.host}" />
+				<property name="redisServerPort" value="${redis.group1.client1.port}" />
+				<property name="timeout" value="${redis.group1.client1.timeout}" />
+				<property name="redisAuthKey" value="${redis.group1.client1.password}" />
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="redisClient2" class="com.baidu.unbiz.redis.RedisClient">
+		<constructor-arg name="clientConfig">
+			<bean class="com.baidu.unbiz.redis.config.RedisHAClientConfig">
+				<property name="cacheName" value="${redis.group1.client2.name}" />
+				<property name="redisServerHost" value="${redis.group1.client2.host}" />
+				<property name="redisServerPort" value="${redis.group1.client2.port}" />
+				<property name="timeout" value="${redis.group1.client2.timeout}" />
+				<property name="redisAuthKey" value="${redis.group1.client2.password}" />
+			</bean>
+		</constructor-arg>
+	</bean>
+
+</beans>

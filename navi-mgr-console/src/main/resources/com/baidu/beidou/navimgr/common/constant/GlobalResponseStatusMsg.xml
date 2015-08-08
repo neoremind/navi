@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="GB2312"?>
+<resource-bundle name="ResultCode">
+	<message id="OK">
+		<data>成功</data>
+		<code>0</code>
+	</message>
+	<message id="SYSTEM_BUSY">
+		<data>系统繁忙</data>
+		<code>1</code>
+	</message>
+	<message id="SYSTEM_ERROR">
+		<data>服务器内部错误</data>
+		<code>1</code>
+	</message>
+	<message id="BIZ_ERROR">
+		<data>系统业务错误</data>
+		<code>2</code>
+	</message>
+	<message id="AUTH_DENIED">
+		<data>无权限操作</data>
+		<code>126</code>
+	</message>
+	<message id="NOT_LOGIN">
+		<data>用户未登录</data>
+		<code>127</code>
+	</message>
+	<message id="LOGIN_FAILED">
+		<data>用户名或密码错误</data>
+		<code>127</code>
+	</message>
+
+	<!-- other errors that handled by global exception handler -->
+	<message id="PARAM_ERROR">
+		<data>请求参数错误</data>
+		<code>1</code>
+	</message>
+	<message id="PARAM_TYPE_ERROR">
+		<data>请求参数类型错误</data>
+		<code>1</code>
+	</message>
+	<message id="PARAM_BIND_ERROR">
+		<data>请求参数绑定发生错误</data>
+		<code>1</code>
+	</message>
+	<message id="PARAM_MISS_ERROR">
+		<data>请求参数缺失错误</data>
+		<code>1</code>
+	</message>
+	<message id="REQUEST_HTTP_METHOD_ERROR">
+		<data>请求HTTP方法错误</data>
+		<code>1</code>
+	</message>
+	<message id="GET_HTML_PAGE_FAILED">
+		<data>无法获取信息页面{0}</data>
+		<code>1</code>
+	</message>
+	<message id="GET_ZOO_TREE_FAILED">
+		<data>连接Zookeeper失败,reason={0}</data>
+		<code>1</code>
+	</message>
+</resource-bundle>
