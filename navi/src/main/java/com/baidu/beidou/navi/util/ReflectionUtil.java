@@ -39,7 +39,7 @@ public class ReflectionUtil {
     }
 
     /**
-     * 获取某个类的所有实例方法，不包含父类
+     * 获取某个类的所有实例方法，包含所有非静态的公有方法
      * 
      * @param clazz
      * @return
@@ -50,8 +50,9 @@ public class ReflectionUtil {
         }
 
         List<Method> methods = new ArrayList<Method>();
-        for (Method method : clazz.getDeclaredMethods()) {
-            if (!Modifier.isStatic(method.getModifiers())) {
+        for (Method method : clazz.getMethods()) {
+            if (!Modifier.isStatic(method.getModifiers())
+                    && Modifier.isPublic(method.getModifiers())) {
                 methods.add(method);
             }
         }

@@ -39,7 +39,16 @@ public class TestZooKeeperClient {
             // zkClient.setData(path3, data.getBytes());
             // System.out.println("now: " + new String(zkClient.getData(path3)));
 
-            String path = "/navi_rpc/navi-demo-server";
+            String path = "/navi_rpc/unbiz/soma/bizserv/sync-report/qa";
+            zkClient.delete(path);
+
+            path = "/navi_rpc/unbiz/soma/bizserv/sync-report/qa/ReportUserCostService";
+            zkClient.delete(path);
+
+            path = "/navi_rpc/unbiz/soma/bizserv/sync-report/qa/ReportLiteService";
+            zkClient.delete(path);
+
+            path = "/navi_rpc/unbiz/soma/bizserv/sync-report/qa/ReportBasicService";
             zkClient.delete(path);
             //zkClient.createSessionNode(path, "".getBytes());
             //zkClient.createSessionNode(path + "/uuu", "".getBytes());

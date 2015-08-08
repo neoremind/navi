@@ -12,7 +12,7 @@ import com.baidu.beidou.navi.util.Preconditions;
  * ClassName: ServiceRegistry <br/>
  * Function: 服务注册信息保存者，常驻内存的缓存，使用单例访问，缓存了服务的描述 <br/>
  * 泛型&lt;KEY&gt;标示服务的唯一标示，例如可以是一个<tt>int</tt>的数字id，可以是一个<tt>String</tt>字符串
- * 
+ *
  * @author Zhang Xu
  */
 @SuppressWarnings("rawtypes")
@@ -23,7 +23,7 @@ public class ServiceRegistry<KEY> {
     /**
      * 服务注册的字典 <br/>
      * 键为服务标示<code>KEY</code>，值为服务具体描述
-     * 
+     *
      * @see MethodDescriptor
      */
     private ConcurrentHashMap<KEY, MethodDescriptor<KEY>> serviceDescriptors;
@@ -35,7 +35,7 @@ public class ServiceRegistry<KEY> {
 
     /**
      * 获取服务注册对象
-     * 
+     *
      * @return 服务注册信息保存者
      */
     @SuppressWarnings("unchecked")
@@ -59,7 +59,7 @@ public class ServiceRegistry<KEY> {
 
     /**
      * 获取所有服务描述
-     * 
+     *
      * @return 所有注册的服务的方法描述
      * @throws IllegalStateException
      */
@@ -71,7 +71,7 @@ public class ServiceRegistry<KEY> {
 
     /**
      * 根据标示<code>KEY</code>获取服务描述
-     * 
+     *
      * @param key
      *            服务的唯一标示
      * @return 服务的方法描述
@@ -85,7 +85,7 @@ public class ServiceRegistry<KEY> {
 
     /**
      * 加入服务描述
-     * 
+     *
      * @param key
      *            服务的唯一标示
      * @param serviceDescriptor
@@ -94,10 +94,12 @@ public class ServiceRegistry<KEY> {
     public void addServiceDescriptor(KEY key, MethodDescriptor<KEY> serviceDescriptor) {
         Preconditions.checkNotNull(key, "Key cannot be null");
         Preconditions.checkState(instance != null, "ServiceRegistry not init yet");
-        if (serviceDescriptors.containsKey(key)) {
-            LOG.warn("Ignore key=" + key + " since it is already registered with "
-                    + serviceDescriptor);
-        }
+
+        //        if (serviceDescriptors.containsKey(key)) {
+        //            LOG.warn("Ignore key=" + key + " since it is already registered with "
+        //                    + serviceDescriptor);
+        //        }
+
         this.serviceDescriptors.putIfAbsent(key, serviceDescriptor);
     }
 

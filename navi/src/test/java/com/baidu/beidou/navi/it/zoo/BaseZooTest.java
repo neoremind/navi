@@ -42,6 +42,8 @@ public class BaseZooTest extends AbstractJUnit4SpringContextTests {
         RpcClientConf.ZK_SERVER_LIST = Config.ZOO_LIST;
         RpcClientConf.ZK_WATCH_NAMESPACE_PATHS = StringUtil.split(Config.ZOO_REGISTRY_NAMESPACE,
                 StringUtil.COMMA);
+        RpcClientConf.RPC_CONNECTION_TIMEOUT = 2000;
+        RpcClientConf.RPC_READ_TIMEOUT = 5000;
 
         listener = new NaviRpcServerListListener();
     }

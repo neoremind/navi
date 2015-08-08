@@ -1,9 +1,11 @@
 package com.baidu.beidou.navi.vo;
 
+import java.io.Serializable;
+
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
-public class Book {
+public class Book implements Serializable {
 
     /**
      * 书籍ID

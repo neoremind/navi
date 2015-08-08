@@ -2,6 +2,7 @@ package com.baidu.beidou.navi.it;
 
 import javax.annotation.Resource;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.baidu.beidou.navi.it.service.CompanyService;
@@ -46,7 +47,7 @@ public class TestSimpleCompanyService extends AbstractCompanyServiceTest {
         testDelete(companyServiceDirectCall);
     }
 
-    @Test
+    @Before
     public void testInit() {
         testInit(companyServiceDirectCall);
     }

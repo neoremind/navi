@@ -57,6 +57,7 @@ public class AbstractCompanyServiceTest extends BaseTest {
     }
 
     public void testAddNegative(CompanyService companyService) {
+        testAdd(companyService);
         Company c = CompanyBuilder.buildSimple();
         try {
             c.setId(555);
@@ -77,6 +78,7 @@ public class AbstractCompanyServiceTest extends BaseTest {
     }
 
     public void testDelete(CompanyService companyService) {
+        testAdd(companyService);
         companyService.delete(99);
         List<Company> c = companyService.getAll();
         assertThat(c.size(), is(2));

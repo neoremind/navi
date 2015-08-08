@@ -2,6 +2,7 @@ package com.baidu.beidou.navi.it.zoo;
 
 import javax.annotation.Resource;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import com.baidu.beidou.navi.it.service.CompanyService;
@@ -46,7 +47,7 @@ public class TestSimpleCompanyServiceWithZoo extends AbstractCompanyServiceZooTe
         testDelete(companyServiceEnableZoo);
     }
 
-    @Test
+    @Before
     public void testInit() {
         testInit(companyServiceEnableZoo);
     }
