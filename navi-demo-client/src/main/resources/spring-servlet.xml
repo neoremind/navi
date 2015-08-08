@@ -16,7 +16,7 @@
 
 	<mvc:annotation-driven />
 
-	<context:component-scan base-package="net.neoremind" />
+	<context:component-scan base-package="com.baidu.beidou" />
 	<context:annotation-config />
 
 	<!-- 静态资源不经过SpringMVC，直接交由容器处理 -->

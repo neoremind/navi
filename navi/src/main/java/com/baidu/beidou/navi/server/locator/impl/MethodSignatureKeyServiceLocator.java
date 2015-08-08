@@ -115,7 +115,7 @@ public class MethodSignatureKeyServiceLocator implements ServiceLocator<String, 
                         }
                     }
                 }
-                LOG.info("Find rpc service configured by xml style, interface is "
+                LOG.info("Find rpc service configured, interface is "
                         + interfSimpleName + " , implementation is "
                         + AopUtils.getTargetClass(bean).getName());
                 return true;

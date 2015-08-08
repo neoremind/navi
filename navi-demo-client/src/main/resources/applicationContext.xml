@@ -18,13 +18,16 @@
 	
 	<context:property-placeholder location="classpath*:/rpc-client.properties" />
 	
-	<bean class="net.neoremind.navi.conf.RpcClientConf">
+	<bean class="com.baidu.beidou.navi.conf.RpcClientConf">
 		<property name="ENABLE_ZK_REGISTRY">
 			<value>${ENABLE_ZK_REGISTRY}</value>
 		</property>
 		<property name="ZK_SERVER_LIST">
 			<value>${ZK_SERVER_LIST}</value>
 		</property>
+		<property name="ZK_DIGEST_AUTH">
+            <value>${ZK_DIGEST_AUTH}</value>
+        </property>
 		<property name="ZK_DEFAULT_SESSION_TIMEOUT_MILLS">
 			<value>${ZK_DEFAULT_SESSION_TIMEOUT_MILLS}</value>
 		</property>
@@ -33,9 +36,6 @@
 		</property>
 		<property name="ZK_WATCH_NAMESPACE_PATHS">
 			<value>${ZK_WATCH_NAMESPACE_PATHS}</value>
-		</property>
-		<property name="SERVER_LIST">
-			<value>${SERVER_LIST}</value>
 		</property>
 		<property name="RPC_CONNECTION_TIMEOUT">
 			<value>${RPC_CONNECTION_TIMEOUT}</value>
@@ -48,7 +48,7 @@
 		</property>
 	</bean>
 	
-	<bean class="net.neoremind.navi.client.NaviRpcServerListListener">
+	<bean class="com.baidu.beidou.navi.client.NaviRpcServerListListener">
 	</bean>
 
 </beans>
