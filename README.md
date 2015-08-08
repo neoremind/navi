@@ -37,20 +37,16 @@ Navi是一个分布式服务框架，提供高性能和无侵入式的RPC远程�
 
 ##Development
 
-[单元测试](https://github.com/neoremind/navi/wiki/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95)
+[单元测试](https://github.com/neoremind/navi/wiki/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95)
 
 [性能测试](https://github.com/neoremind/navi/wiki/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95)
 
-
-===
 
 ## Navi-Pbrpc
 
 系出同门的Pbrpc，提供基于socket nio + protobuf全双工、异步、非阻塞的高性能通信解决方案，了解详情请[点击链接](https://github.com/neoremind/navi-pbrpc)。
 
-===
-
 ## Supports 
 
-![](http://neoremind.net/imgs/gmail.png)
+![](https://github.com/neoremind/navi/blob/master/images/gmail.png)
 
