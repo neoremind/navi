@@ -1,5 +1,6 @@
 #Navi-RPC
 ![](https://travis-ci.org/neoremind/navi.svg?branch=master)
+![](https://maven-badges.herokuapp.com/maven-central/com.baidu.beidou/navi-rpc/badge.svg)
 
 Navi is a distributed service framework that provides cluster management and high performance RPC. With Navi, you can easily distribute application with minimal effort to create a highly scalable architecture capable of handing remote procudure call and service registration and discovery.
 
